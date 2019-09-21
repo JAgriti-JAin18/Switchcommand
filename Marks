@@ -1,0 +1,40 @@
+#include<iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+	int x;
+	char a,y;
+	A: cout<<"Enter the marks \n";
+	cin>>x;
+	if (x<0 || x>100)
+	{
+	cout<<"Invalid Input, Enter Correct Marks \n";
+	goto A;
+	}
+	else
+	switch ((x-1)/10)
+	{
+	case 9: cout<<"The grade is A"; break;
+	case 8: cout<<"The grade is B+"; break;
+	case 7: cout<<"The grade is B"; break;
+	case 6: cout<<"The grade is C+"; break;
+	case 5: {
+			if (x>=53)
+			cout<<"The grade is C";
+			else
+			cout<<"The grade is D"; break;
+			}
+	case 4: {
+			if (x>=40)
+			cout<<"The grade is D";
+			else
+			cout<<"The grade is F"; break;
+			}
+	default: cout<<"The grade is F";
+	}
+	cout<<"\nIf you have more marks, enter y or n \n";
+	cin>>a;
+	if (a=='y') goto A;
+	else cout<<"Thanks!";
+}
